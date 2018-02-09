@@ -20,9 +20,11 @@
     <div class="button-wrapper">
       <div class="left-clicker carousel-btn" v-on:click="moveCarousel('left')">
         <i class="fa fa-chevron-circle-left"></i>
+        <!-- Makes use of font-awesome icons -->
       </div>
       <div class="right-clicker carousel-btn" v-on:click="moveCarousel('right')">
         <i class="fa fa-chevron-circle-right"></i>
+        <!-- Makes use of font-awesome icons -->
       </div>
     </div>
 
@@ -68,6 +70,7 @@ export default {
     clear: both;
     width: 0px;
     margin: 0 auto;
+    perspective: 200px;
   }
   .wrapper {
     margin-left: -200px;
@@ -80,26 +83,26 @@ export default {
     width: 400px;
     z-index: -1;
     transition: transform 0.5s ease, z-index 0.2s linear;
-    transform: perspective(200px) translateZ(-275px);
+    transform: translate3d(0px, 0px, -275px);
   }
   .far-left {
-    transform: perspective(200px) translateZ(-175px) translateX(-47vw);
+    transform: translate3d(-47vw, 0px, -175px);
     z-index: 3;
   }
   .left {
-    transform: perspective(200px) translateZ(-75px) translateX(-22vw);
+    transform: translate3d(-22vw, 0px, -75px);
     z-index: 5;
   }
   .center {
-    transform: perspective(200px) translateZ(0px) translateX(0vw);
+    transform: translate3d(0vw, 0px, 0px);
     z-index: 7;
   }
   .right {
-    transform: perspective(200px) translateZ(-75px) translateX(22vw);
+    transform: translate3d(22vw, 0px, -75px);
     z-index: 5;
   }
   .far-right {
-    transform: perspective(200px) translateZ(-175px) translateX(47vw);
+    transform: translate3d(47vw, 0px, -175px);
     z-index: 3;
   }
   .carousel-component {
